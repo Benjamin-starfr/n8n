@@ -1,0 +1,22 @@
+app = "sere-n8n"
+
+[env]
+  N8N_HOST = "sere-n8n.fly.dev"
+  N8N_PORT = "5678"
+  N8N_PROTOCOL = "https"
+  N8N_EMBED_ENABLED = "true"
+  N8N_USER_MANAGEMENT_DISABLED = "false"
+  N8N_EDITOR_BASE_URL = "https://sere-n8n.fly.dev"
+  WEBHOOK_TUNNEL_URL = "https://sere-n8n.fly.dev"
+
+[[services]]
+  internal_port = 5678
+  protocol = "tcp"
+
+  [[services.ports]]
+    handlers = ["http"]
+    port = 80
+
+  [[services.ports]]
+    handlers = ["tls", "http"]
+    port = 443
